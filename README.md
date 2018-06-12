@@ -1,0 +1,1 @@
+replace "appId" in public/js/index.js

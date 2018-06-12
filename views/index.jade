@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  .maincontainer
+    h1= title
+    h2= "hello " + user.username
+    button(type='button', class="butn full-width butn-lg", onclick="hc.sendTest()").butn.butn-green Send Test Email

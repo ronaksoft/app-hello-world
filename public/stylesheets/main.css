@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 300;
+  src: url(/fonts/OpenSans/OpenSans-Light.eot?) format("eot"), url(/fonts/OpenSans/OpenSans-Light.ttf) format("truetype"), url(/fonts/OpenSans/OpenSans-Light.woff) format("woff"), url(/fonts/OpenSans/OpenSans-Light.woff2) format("woff2")
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 400;
+  src: url(/fonts/OpenSans/OpenSans-Regular.eot?) format("eot"), url(/fonts/OpenSans/OpenSans-Regular.ttf) format("truetype"), url(/fonts/OpenSans/OpenSans-Regular.woff) format("woff"), url(/fonts/OpenSans/OpenSans-Regular.woff2) format("woff2")
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 700;
+  src: url(/fonts/OpenSans/OpenSans-Bold.eot?) format("eot"), url(/fonts/OpenSans/OpenSans-Bold.ttf) format("truetype"), url(/fonts/OpenSans/OpenSans-Bold.woff) format("woff"), url(/fonts/OpenSans/OpenSans-Bold.woff2) format("woff2")
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  font-weight: 300;
+  src: url(/fonts/YekanBakh/YekanBakhNestedWeb-Light.eot?) format("eot"), url(/fonts/YekanBakh/YekanBakhNestedWeb-Light.ttf) format("truetype"), url(/fonts/YekanBakh/YekanBakhNestedWeb-Light.woff) format("woff"), url(/fonts/YekanBakh/YekanBakhNestedWeb-Light.woff2) format("woff2")
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  font-weight: 400;
+  src: url(/fonts/YekanBakh/YekanBakhNestedWeb-Regular.eot?) format("eot"), url(/fonts/YekanBakh/YekanBakhNestedWeb-Regular.ttf) format("truetype"), url(/fonts/YekanBakh/YekanBakhNestedWeb-Regular.woff) format("woff"), url(/fonts/YekanBakh/YekanBakhNestedWeb-Regular.woff2) format("woff2")
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  font-weight: 700;
+  src: url(/fonts/YekanBakh/YekanBakhNestedWeb-Bold.eot?) format("eot"), url(/fonts/YekanBakh/YekanBakhNestedWeb-Bold.ttf) format("truetype"), url(/fonts/YekanBakh/YekanBakhNestedWeb-Bold.woff) format("woff"), url(/fonts/YekanBakh/YekanBakhNestedWeb-Bold.woff2) format("woff2")
+}
+
+:root {
+  --red: #c90414;
+  --blue: #1287cc;
+  --green: #00b217;
+  --yellow: #e89e00;
+  --orange: #c92f00;
+}
+
+/**
+ * Global Reset of all HTML Elements
+ *
+ * Resetting all of our HTML Elements ensures a smoother
+ * visual transition between browsers. If you don't believe me,
+ * try temporarily commenting out this block of code, then go
+ * and look at Mozilla versus Safari, both good browsers with
+ * a good implementation of CSS. The thing is, all browser CSS
+ * defaults are different and at the end of the day if visual
+ * consistency is what we're shooting for, then we need to
+ * make sure we're resetting all spacing elements.
+ *
+ */
+ html, body {
+	border: 0;
+	line-height: 1.4;
+	margin: 0;
+	padding: 0;
+  font-family: 'YekanBakh', 'OpenSans';
+}
+
+div, span, object, iframe, img, table, caption, thead, tbody,
+tfoot, tr, tr, td, article, aside, canvas, details, figure, hgroup, menu,
+nav, footer, header, section, summary, mark, audio, video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cit, code,
+del, dfn, em, ins, q, samp, small, strong, sub, sup, b, i, hr, dl, dt, dd,
+ol, ul, li, fieldset, legend, label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {
+  border: 0;
+}
+
+:focus {
+  outline: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+/*  */
+.butn {
+  border-width: 1px;
+  border-style: solid;
+  font-size: 14px;
+  color: rgba(50, 61, 71, 0.8);
+  white-space: nowrap;
+  font-weight: bold;
+  height: 32px;
+  border-radius: 3px;
+  flex: none;
+  line-height: 30px;
+  text-align: center;
+  transition: all .2s;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  padding: 0 16px;
+  outline: none;
+  margin: 0 4px 8px;
+  background-color: #fff;
+  border-color: transparent;
+  background-image: none;
+  user-select: none;
+}
+.butn::-moz-focus-inner {
+  border: 0;
+}
+.butn.full-width {
+  min-width: 100%;
+}
+.butn:hover {
+  color: #323d47;
+  box-shadow: 0px 4px 8px rgba(35, 38, 41, 0.16);
+}
+.butn:focus {
+  color: #323d47;
+  box-shadow: 0px 1px 2px rgba(35, 38, 41, 0.16);
+}
+.butn:hover:disabled,
+.butn:focus:disabled,
+.butn:disabled {
+  cursor: not-allowed;
+  border-color: #DDDFE0;
+  text-decoration: none;
+  box-shadow: none;
+  background-color: #DDDFE0;
+  color: #ACB0B4;
+}
+.butn-lg {
+  height: 40px;
+  line-height: 38px;
+}
+.butnPrimary {
+  background-color: #14D769;
+  border-color: #00B45A;
+  color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 180, 90, 0.32);
+}
+.butnPrimary:hover {
+  background-color: #14D769;
+  border-color: #14D769;
+  color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 180, 90, 0.32);
+}
+.butnPrimary:focus {
+  background-color: #00B45A;
+  color: #fff;
+  border-color: #00B45A;
+  box-shadow: 0px 1px 2px rgba(0, 180, 90, 0.32);
+}
+.butnPrimary.secondary {
+  background-color: #fff!important;
+  color: #00B45A;
+}

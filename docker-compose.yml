@@ -1,0 +1,6 @@
+version: '2'
+services:
+  app:
+    image: ./
+    ports:
+      - "3010:80"
