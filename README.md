@@ -90,8 +90,9 @@ nested's Framework has two main parts:
     nstApp.sendIframeMessage({cmd}, {payload});
 sendIframeMessage function calls nested framework API's directly,
 List of nested's Framework commands:
+
 | cmd | payload | response handler |
-|--|--|--|
+| -- | -- | -- |
 | getInfo | none | setInfo |
 | setSize | `height`, `width` | none |
 | setNotif | `type = {'success', 'info', 'warning', 'error'}`, `message`| none |
@@ -106,7 +107,7 @@ example
 
 ### Handlers
 | handler | response |
-|--|--|
+| -- | -- |
 | setInfo | `userdId`, `email`, `fname`, `lanme`, `msgId`, `app`, `domain`, `locale`, `dark` |
 | setTheme | `dark` |
 | setLoginInfo | `token`, `appToken`, `appDomain`, `username`, `fname`, `lname`, `email` |
