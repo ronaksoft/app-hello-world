@@ -1,33 +1,33 @@
-
-image: node:latest
-stages:
-  - test
-  - 
-variables:
-  BUILD_DIR: $CI_PROJECT_DIR/build
-cache:
-  paths:
-  - node_modules/
-
-test:
-  stage: test
-  script:
-    - npm install
-    - npm test
-
-pack:
-  stage: deploy
-  only:
-    - master
-  image: docker:latest
-  services:
-    - docker:dind
-  variables:
-    TAG:  "2.0"
-  script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker build --pull -t $CI_REGISTRY_IMAGE:$TAG .
-    - docker push $CI_REGISTRY_IMAGE:$TAG
-  artifacts:
-    paths:
-    - ./*.tgz
+#
+#image: node:latest
+#stages:
+#  - test
+#  -
+#variables:
+#  BUILD_DIR: $CI_PROJECT_DIR/build
+#cache:
+#  paths:
+#  - node_modules/
+#
+#test:
+#  stage: test
+#  script:
+#    - npm install
+#    - npm test
+#
+#pack:
+#  stage: deploy
+#  only:
+#    - master
+#  image: docker:latest
+#  services:
+#    - docker:dind
+#  variables:
+#    TAG:  "2.0"
+#  script:
+#    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+#    - docker build --pull -t $CI_REGISTRY_IMAGE:$TAG .
+#    - docker push $CI_REGISTRY_IMAGE:$TAG
+#  artifacts:
+#    paths:
+#    - ./*.tgz
