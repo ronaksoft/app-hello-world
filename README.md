@@ -92,7 +92,7 @@ sendIframeMessage function calls nested framework API's directly,
 List of nested's Framework commands:
 | cmd | payload |response handler |
 |--|--|--|
-| getInfo | none |setInfo |
+| getInfo | none | setInfo |
 | setSize | `height`, `width` | none |
 | setNotif | `type = {'success', 'info', 'warning', 'error'}`, `message`| none |
 | createToken | `token` | setLoginInfo |
