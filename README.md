@@ -40,4 +40,38 @@ nested's OAuth url has template described below:
 
 Notice that the end point you are providing supposes to accept all request and data will be sent as  **multi-part formdata**!
 
-**DO NOT FORGET TO ADD "Access-Control-Allow-Origin" to "*" or those OAuth url I mentioned!**
+**DO NOT FORGET TO ADD `"Access-Control-Allow-Origin"` to `"*"` or those OAuth url I mentioned!**
+
+### Step 3 - Use OAuth data for register or login
+You have all the info you need to register a user!
+`app_token` and `app_id` will help you to call nested's API as authenticated user. More details on abc section.
+
+## Nested API
+Almost all API's can be used with `app_token` and `app_id`, you can find list nested's API's [here](http://webapp.ronaksoftware.com:2222/)
+
+Unlike Slack nested is not a single instance server and each workspace has its own api url, for obtaining those url addresses you have to call url below:
+
+    https://npc.nested.me/dns/discover/{workspace or domain address}
+    //e.g https://npc.nested.me/dns/discover/nested.me
+You can use [this](/lib/nested.js) file to discover API addresses easier
+
+### Calling nested API's
+
+    {
+      cmd,
+      data,
+      _reqid: {requesr id},
+      _app_id: {app_id},
+      _app_token: {app_token},
+    }
+here is the json model of each request
+
+`cmd` is command that is listed in API section
+
+`data` is payload of your request
+
+`_reqid` is request ID and mostly is being used in websocket form of calling API's and in response you will get the same request ID!
+
+`_app_id` is Client_Id
+
+`_app_token` is the token you'll get from OAuth section
