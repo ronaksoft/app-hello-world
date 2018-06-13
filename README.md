@@ -17,26 +17,26 @@ nested's OAuth url has template described below:
 
     https://web.nested.me/oauth/?client_id={app_id}&redirect_uri={callback_url}&scope={permissions}&token={your_optional_token}
 
-*{app_id}*: your application id,
+`{app_id}`: your application id,
 
-*{callback_url}*: sends a post request to this end point
+`{callback_url}`: sends a post request to this end point
 
-    params : {  
-	    token:  {your_optional_token}  
-	    app_id: {app_id},  
-	    app_token: {app_token},  
-	    app_domain: {workspace domain},  
-	    username: {user _id},  
-	    admin: {user authority.admin},  
-	    fname: {user fname},  
-	    lname: {user lname},  
-	    email: {user email},  
-	    picture: {complete path user logo} // complete path to user logo  
+    params : {
+	    token:  {your_optional_token}
+	    app_id: {app_id},
+	    app_token: {app_token},
+	    app_domain: {workspace domain},
+	    username: {user _id},
+	    admin: {user authority.admin},
+	    fname: {user fname},
+	    lname: {user lname},
+	    email: {user email},
+	    picture: {complete path user logo} // complete path to user logo
     };
 
-*{permissions}*: comma separated values
+`{permissions}`: comma separated values
 
-*{your_optional_token}*: described in {callback_url} section
+`{your_optional_token}`: described in {callback_url} section
 
 Notice that the end point you are providing supposes to accept all request and data will be sent as  **multi-part formdata**!
 
