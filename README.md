@@ -75,3 +75,44 @@ here is the json model of each request
 `_app_id` is Client_Id
 
 `_app_token` is the token you'll get from OAuth section
+
+## Working with nested's Framework
+nested has its own [framework](http://git.ronaksoftware.com/nested-apps/framework) to work third party apps.
+
+nested and third party apps can talk through a iframe window, in order to do so framework must be initialized with client unique id.
+
+Example:
+
+    nstApp.init('_helloworld');
+nested's Framework has two main parts:
+### Api Call
+
+    nstApp.sendIframeMessage({cmd}, {payload});
+sendIframeMessage function calls nested framework API's directly,
+List of nested's Framework commands:
+| cmd |payload  |response handler
+|--|--|--|
+| getInfo | none |setInfo|
+| setSize | `height`, `width` | none|
+| setNotif | `type = {'success', 'info', 'warning', 'error'}`, `message`| none|
+| createToken | `token` | setLoginInfo|
+
+example
+
+    nstApp.sendIframeMessage('setSize', {
+        width: 100,
+        height: 200
+    });
+
+### Handlers
+| handler | response |
+|--|--|
+| setInfo | `userdId`, `email`, `fname`, `lanme`, `msgId`, `app`, `domain`, `locale`, `dark` |
+| setTheme | `dark` |
+| setLoginInfo | `token`, `appToken`, `appDomain`, `username`, `fname`, `lname`, `email` |
+
+example:
+
+    nstApp.handler.setInfo = function (response) {
+    	console.log(response);
+    };
